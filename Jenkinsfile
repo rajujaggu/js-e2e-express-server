@@ -2,7 +2,7 @@ pipeline{
     agent {label 'NPM-BUILD'}
      parameters {
         choice(name: 'branch', choices: ['main'], description: 'branch name')
-        string(name: 'npm_build', defaultValue: 'build', description: 'npm build')
+        string(name: 'npm_build', defaultValue: 'install', description: 'npm build')
      }
    
     stages {
@@ -16,6 +16,7 @@ pipeline{
         stage ('build'){
             steps{
                 sh "npm ${params.npm_build}"
+                sh "npm run build"
             }
         }
 }
