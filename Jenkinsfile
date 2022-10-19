@@ -9,7 +9,7 @@ pipeline{
         stage ('vcs')
         {
             steps{
-              git url: 'https://github.com/rajujaggu/spring-petclinic.git',
+              git url: 'https://github.com/rajujaggu/js-e2e-express-server.git',
                   branch: "${params.branch}"
             }
         }
